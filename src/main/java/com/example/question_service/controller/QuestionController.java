@@ -4,6 +4,7 @@ import com.example.question_service.model.Question;
 import com.example.question_service.model.QuestionWrapper;
 import com.example.question_service.service.QuestionService;
 import com.example.question_service.model.Response;
+import org.hibernate.cfg.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ public class QuestionController {
 
     @Autowired // We got an object with this annotation
     QuestionService questionService;
+
     @GetMapping("allQuestions") // with allquestion does not work
     public ResponseEntity<List<Question>> getAllQuestions(){ // most of the time you will have the same method names
         return questionService.getAllQuestions();
